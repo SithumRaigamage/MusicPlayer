@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/svg" href="/images/music-solid.svg">
+    <script src="https://kit.fontawesome.com/c9d7001ad2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle" id="menu-bar">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+            <div class="song">
+                <img id="albumCover" src="images/empty.png" alt="Album Cover">
+                <div id="songTitle"></div>
+            </div>
+            <input type="range" value="0" id="progress">
+            <div class="controls">
+                <div id="prev-btn" class="control-btn"><i class="fa-solid fa-backward"></i></div>
+                <div id="play-pause-btn" class="control-btn"><i class="fa-solid fa-play" id="controlIcon"></i></div>
+                <div id="next-btn" class="control-btn"><i class="fa-solid fa-forward"></i></div>
+            </div>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <h2>Upload Music File</h2>
+            <input type="file" id="popupFileInput" accept=".mp3" onchange="handleFileUpload(event)">
+            <div class="song-list" id="song-list">
+                <ul id="songList"></ul>
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>  
+<script src="script.js"></script>
+</body>
+</html>
